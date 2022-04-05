@@ -1,11 +1,12 @@
 import json
 import pandas as pd
 
-#functions necessary for execution of run.py
+# functions necessary for execution of main.py
 
 def getStudents():
     ## Prompt user for file with student data. ##
     '''Takes in void; returns file object.'''
+    ##### UNCOMMENT if you would like user-input for the files. #####
     #while True:
     #    f = input('Enter the name of the file: ')
     #    try:
@@ -14,13 +15,13 @@ def getStudents():
     #        print('The file was not found -- please try again.')
     #    else:
     #        return f
-    #studentsFile = r'D:\_doc\_coding\_python\SingleStoneExercise\app\students.csv'
     studentsFile = r'/app/students.csv'
     return studentsFile
 
 def getTeachers():
     ## Prompt user for file with teacher data. ##
     '''Takes in void; returns file object.'''
+    ##### UNCOMMENT if you would like user-input for the files. #####
     #while True:
     #    f = input('Enter the name of the file: ')
     #    try:
@@ -29,7 +30,6 @@ def getTeachers():
     #        print('The file was not found -- please try again.')
     #    else:
     #        return f
-    #teachersFile = r'D:\_doc\_coding\_python\SingleStoneExercise\app\teachers.parquet'
     teachersFile = r'/app/teachers.parquet'
     return teachersFile
 
@@ -55,6 +55,8 @@ def writeToJSON(output):
     ## Write student-teacher pairs and their class assignments to a JSON file. ##
     '''Takes in list of dictionary objects; writes list to external JSON file; returns void.'''
     jOut = json.dumps(output)
-    with open('output.json', 'w') as f:
+    print('here')
+    with open('/app/output.json', 'w') as f:
         f.write(jOut)
+        print('here2')
         f.close()
